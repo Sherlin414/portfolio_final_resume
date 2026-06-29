@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sherlin S — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== APP ===================== -->
+<div id="app" class="app">
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">SS<span class="dot">.</span><span class="logo-sub">eth</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="edit-toggle" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M11.5 1.5l3 3L5 14H2v-3L11.5 1.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Edit mode</span>
+        </button>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="hash-chip" id="block-0">#0000000</span> genesis &mdash; identity block</p>
+        <h1 class="hero-title">
+          Sherlin S
+          <span class="hero-title-sub">Reg No. 24104082</span>
+        </h1>
+        <p class="hero-role">3rd Year CSE Student &mdash; <span class="accent-text">Blockchain</span> Domain</p>
+        <p class="hero-desc">
+          I build and study decentralized systems &mdash; smart contracts, consensus mechanisms,
+          and the cryptographic primitives that hold them together. This page is itself a
+          small chain: every project and skill below is a linked block you can add to,
+          update, or remove.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View projects<span class="arrow">→</span></a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat"><span class="stat-num" id="stat-skills">0</span><span class="stat-label">skills mined</span></div>
+          <div class="stat"><span class="stat-num" id="stat-projects">0</span><span class="stat-label">projects deployed</span></div>
+          <div class="stat"><span class="stat-num">2</span><span class="stat-label">years to graduation</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000001</span> about_me.block</p>
+      <h2 class="section-title">About me</h2>
+      <div class="about-grid">
+        <div class="about-text" id="about-text" contenteditable="false">
+          I'm Sherlin S, a third-year Computer Science Engineering student with a focused
+          interest in blockchain technology &mdash; from the fundamentals of distributed
+          ledgers and cryptographic hashing to writing and testing smart contracts.
+          I enjoy taking apart how trustless systems are designed, and I'm building toward
+          a career in blockchain development and Web3 engineering. Outside of blockchain,
+          I work across full-stack web development, which is what this very portfolio is
+          built with: HTML, CSS, and JavaScript.
+        </div>
+        <div class="about-card">
+          <div class="ledger-row"><span>Name</span><strong>Sherlin S</strong></div>
+          <div class="ledger-row"><span>Register No.</span><strong>24104082</strong></div>
+          <div class="ledger-row"><span>Year</span><strong>3rd Year, CSE</strong></div>
+          <div class="ledger-row"><span>Focus domain</span><strong>Blockchain</strong></div>
+          <div class="ledger-row"><span>Status</span><strong class="status-live">● Open to opportunities</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000002</span> skills_ledger.block</p>
+      <div class="section-head-row">
+        <h2 class="section-title">Skills</h2>
+        <button class="btn btn-primary btn-sm edit-only hidden" id="add-skill-btn">+ Add skill</button>
+      </div>
+      <p class="section-sub">Each skill is a mined block. In edit mode you can add, update, or remove entries &mdash; changes are written straight to your ledger.</p>
+      <div class="chain-grid" id="skills-grid"></div>
+      <p class="empty-state hidden" id="skills-empty">No skills mined yet. Switch on Edit mode and add your first block.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000003</span> project_chain.block</p>
+      <div class="section-head-row">
+        <h2 class="section-title">Projects</h2>
+        <button class="btn btn-primary btn-sm edit-only hidden" id="add-project-btn">+ Add project</button>
+      </div>
+      <p class="section-sub">Every project is a deployed block, linked to the one before it &mdash; just like a real chain.</p>
+      <div class="project-chain" id="projects-grid"></div>
+      <p class="empty-state hidden" id="projects-empty">No projects deployed yet. Switch on Edit mode and add your first block.</p>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section id="internships" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000004</span> internship_chain.block</p>
+      <div class="section-head-row">
+        <h2 class="section-title">Internships</h2>
+        <button class="btn btn-primary btn-sm edit-only hidden" id="add-internship-btn">+ Add internship</button>
+      </div>
+      <p class="section-sub">Each internship is a deployed work block &mdash; real-world commits, not just classroom code.</p>
+      <div class="project-chain" id="internships-grid"></div>
+      <p class="empty-state hidden" id="internships-empty">No internships mined yet. Switch on Edit mode and add your first block.</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000005</span> certificate_ledger.block</p>
+      <div class="section-head-row">
+        <h2 class="section-title">Certificates</h2>
+        <button class="btn btn-primary btn-sm edit-only hidden" id="add-certificate-btn">+ Add certificate</button>
+      </div>
+      <p class="section-sub">Verified blocks &mdash; courses, hackathons, and mapathons signed off and minted into the ledger.</p>
+      <div class="chain-grid" id="certificates-grid"></div>
+      <p class="empty-state hidden" id="certificates-empty">No certificates minted yet. Switch on Edit mode and add your first block.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section section-alt">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000006</span> education_history.block</p>
+      <h2 class="section-title">Education &amp; Experience</h2>
+      <div class="timeline" id="education-timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-top">
+              <h3>B.E. Computer Science &amp; Engineering</h3>
+              <span class="timeline-date">2024 &ndash; 2028 (Expected)</span>
+            </div>
+            <p>3rd Year &mdash; Reg No. 24104082. Coursework includes Data Structures, Web Technologies,
+            Cryptography, and Distributed Systems, with project work focused on blockchain applications.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-top">
+              <h3>Higher Secondary Education</h3>
+              <span class="timeline-date">Completed 2023</span>
+            </div>
+            <p>Built a strong foundation in mathematics and computer science, which led directly
+            into pursuing CSE with a specialization interest in blockchain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="hash-chip">#0000007</span> contact.block</p>
+      <h2 class="section-title">Let's connect</h2>
+      <p class="section-sub">Whether it's about placements, blockchain projects, or collaboration &mdash; drop a message and it'll be added to your message ledger below.</p>
+
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form">
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" required placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" rows="4" required placeholder="Say hello, or talk blockchain..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit message <span class="arrow">→</span></button>
+          <p class="form-note" id="contact-note"></p>
+        </form>
+
+        <div class="messages-panel">
+          <h3>Message ledger</h3>
+          <div id="messages-list" class="messages-list"></div>
+          <p class="empty-state hidden" id="messages-empty">No messages yet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>Sherlin S &mdash; Reg. 24104082 &mdash; CSE, Blockchain Domain</p>
+      <p class="footer-hash">block height: <span id="footer-height">8</span> &middot; chain id: <span id="footer-chain">0x24104082</span></p>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== MODALS ===================== -->
+<div id="modal-backdrop" class="modal-backdrop hidden">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <h3 class="modal-title" id="modal-title">Add block</h3>
+    <form id="modal-form" class="modal-form"></form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
